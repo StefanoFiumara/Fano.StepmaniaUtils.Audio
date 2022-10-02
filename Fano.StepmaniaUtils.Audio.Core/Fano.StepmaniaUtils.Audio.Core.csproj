@@ -9,10 +9,4 @@
       <PackageReference Include="xFFmpeg.NET" Version="7.1.3" />
     </ItemGroup>
 
-    <ItemGroup>
-      <None Update="ffmpeg.exe">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </None>
-    </ItemGroup>
-
 </Project>

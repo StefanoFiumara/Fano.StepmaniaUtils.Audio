@@ -348,4 +348,4 @@ healthchecksdb
 # Backup folder for Package Reference Convert tool in Visual Studio 2017
 MigrationBackup/
 
-Fano.StepmaniaUtils.Audio.Core/ffmpeg.exe
+Fano.StepmaniaUtils.Audio.Runner/ffmpeg.exe

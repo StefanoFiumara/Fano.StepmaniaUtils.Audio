@@ -14,6 +14,8 @@ namespace Fano.StepmaniaUtils.Audio.Core
     {
         public static async Task CreatePreviewClips(string songsFolderPath, string ffmpegPath)
         {
+            Console.ForegroundColor = ConsoleColor.White;
+            
             // Parse .sm files asynchronously
             var fileQueue = new BlockingCollection<string>();
 
@@ -41,8 +43,7 @@ namespace Fano.StepmaniaUtils.Audio.Core
                         {
                             var song = new SmFile(file);
                             var songPath = Path.Combine(songsFolderPath, song.Group, song.Directory, song[SmFileAttribute.MUSIC]);
-                            Console.WriteLine($"Creating Preview Clip for:{songPath}");
-
+                            
                             var inputFile = new InputFile(songPath);
                             var outputFile = new OutputFile(Path.Combine(outputPath, song.Group, $"{song.SongTitle}{inputFile.FileInfo.Extension}"));
 
@@ -50,8 +51,6 @@ namespace Fano.StepmaniaUtils.Audio.Core
                             {
                                 Directory.CreateDirectory(outputFile.FileInfo.Directory?.FullName);
                             }
-
-                            Console.WriteLine($"Output File Path: {outputFile.FileInfo.FullName}");
 
                             var sampleStart = double.Parse(song[SmFileAttribute.SAMPLESTART]);
                             var sampleLength = double.Parse(song[SmFileAttribute.SAMPLELENGTH]);
@@ -63,10 +62,13 @@ namespace Fano.StepmaniaUtils.Audio.Core
                             };
                             
                             ffmpeg.ConvertAsync(inputFile, outputFile, options, CancellationToken.None);
+                            Console.WriteLine($"Created preview clip for: {songPath}");
                         }
                         catch (Exception e)
                         {
+                            Console.ForegroundColor = ConsoleColor.Red;
                             Console.WriteLine($"Error creating preview clip for file at: {file}\n{e.Message}");
+                            Console.ForegroundColor = ConsoleColor.White;
                         }
                     }
                 }));
