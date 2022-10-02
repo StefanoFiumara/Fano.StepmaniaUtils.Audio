@@ -16,8 +16,7 @@ namespace Fano.StepmaniaUtils.Audio.Core
         {
             // Parse .sm files asynchronously
             var fileQueue = new BlockingCollection<string>();
-            var smFiles = new ConcurrentBag<SmFile>();
-            
+
             var producer = Task.Run(() =>
             {
                 foreach (var file in Directory.EnumerateFiles(songsFolderPath, "*.sm", SearchOption.AllDirectories).AsParallel())
@@ -41,7 +40,6 @@ namespace Fano.StepmaniaUtils.Audio.Core
                         try
                         {
                             var song = new SmFile(file);
-                            smFiles.Add(song);
                             var songPath = Path.Combine(songsFolderPath, song.Group, song.Directory, song[SmFileAttribute.MUSIC]);
                             Console.WriteLine($"Creating Preview Clip for:{songPath}");
 
