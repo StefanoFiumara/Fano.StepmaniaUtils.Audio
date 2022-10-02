@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fano.StepmaniaUtils.Audio.Core", "Fano.StepmaniaUtils.Audio.Core\Fano.StepmaniaUtils.Audio.Core.csproj", "{5FF23748-407C-4373-8E8A-A7747CFE2B29}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fano.StepmaniaUtils.Audio.Tests", "Fano.StepmaniaUtils.Audio.Tests\Fano.StepmaniaUtils.Audio.Tests.csproj", "{4934FA4A-FBA0-4AAE-B8BC-11CF26A699BD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5FF23748-407C-4373-8E8A-A7747CFE2B29}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5FF23748-407C-4373-8E8A-A7747CFE2B29}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5FF23748-407C-4373-8E8A-A7747CFE2B29}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5FF23748-407C-4373-8E8A-A7747CFE2B29}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4934FA4A-FBA0-4AAE-B8BC-11CF26A699BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4934FA4A-FBA0-4AAE-B8BC-11CF26A699BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4934FA4A-FBA0-4AAE-B8BC-11CF26A699BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4934FA4A-FBA0-4AAE-B8BC-11CF26A699BD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
