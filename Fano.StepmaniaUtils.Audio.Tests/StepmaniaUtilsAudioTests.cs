@@ -10,7 +10,7 @@ namespace Fano.StepmaniaUtils.Audio.Tests
         [Fact]
         public async Task FfmpegTest()
         {
-            await StepmaniaUtilsExt.CreatePreviewClips(@"G:\Stepmania\Songs");
+            await StepmaniaUtilsExt.CreatePreviewClips(@"G:\Stepmania\Songs", @"ffmpeg.exe");
         }
     }
 }

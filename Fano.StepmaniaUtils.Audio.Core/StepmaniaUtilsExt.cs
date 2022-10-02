@@ -12,7 +12,7 @@ namespace Fano.StepmaniaUtils.Audio.Core
 {
     public static class StepmaniaUtilsExt
     {
-        public static async Task CreatePreviewClips(string songsFolderPath)
+        public static async Task CreatePreviewClips(string songsFolderPath, string ffmpegPath)
         {
             // Parse .sm files asynchronously
             var fileQueue = new BlockingCollection<string>();
@@ -47,7 +47,7 @@ namespace Fano.StepmaniaUtils.Audio.Core
             
             await Task.WhenAll(consumers);
 
-            var ffmpeg = new Engine(@"ffmpeg.exe");
+            var ffmpeg = new Engine(ffmpegPath);
             var outputPath = Path.Combine(Directory.GetCurrentDirectory(), "preview-clip-output");
 
             Directory.CreateDirectory(outputPath);
